@@ -5,7 +5,6 @@ import { Todo } from "./model";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [completedTodos, setCompletedTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
@@ -17,12 +16,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <span className="heading">todo list</span>
-      <TodoList
-        todos={todos}
-        setTodos={setTodos}
-        completedTodos={completedTodos}
-        setCompletedTodos={setCompletedTodos}
-      />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
