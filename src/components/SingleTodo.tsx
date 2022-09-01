@@ -1,6 +1,6 @@
 import React from "react";
 import { Todo } from "../model";
-import { MdDone } from "react-icons/md";
+import { MdClose, MdDone } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
 
 interface Props {
@@ -30,7 +30,7 @@ const SingleTodo: React.FC<Props> = ({ todo, todos, setTodos }: Props) => {
       )}
       <div>
         <span className="icon" onClick={() => handleDone(todo.id)}>
-          <MdDone />
+          {todo.completed ? <MdClose /> : <MdDone />}
         </span>
         <span className="icon" onClick={() => handleDelete(todo.id)}>
           <AiFillDelete />
